@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/level controller.gd" type="Script" id=1]
 [ext_resource path="res://s4xstuff/dmgindicator.png" type="Texture" id=2]
+[ext_resource path="res://s4xstuff/Thunder_HD-Mark_DiAngelo-587966950.wav" type="AudioStream" id=3]
+[ext_resource path="res://s4xstuff/Rain_Inside_House-Mark_DiAngelo-323934112.wav" type="AudioStream" id=4]
+[ext_resource path="res://s4xstuff/indicator light.png" type="Texture" id=5]
+[ext_resource path="res://level parts/darkness.tscn" type="PackedScene" id=6]
 
 [node name="level controller" type="Control"]
+light_mask = 0
 margin_right = 1024.0
 margin_bottom = 600.0
 script = ExtResource( 1 )
@@ -20,12 +25,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="thunder" type="AudioStreamPlayer" parent="Control" groups=[
+"sounds",
+]]
+stream = ExtResource( 3 )
+
+[node name="rain" type="AudioStreamPlayer" parent="Control" groups=[
+"sounds",
+]]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Timer" type="Timer" parent="Control"]
+
 [node name="Sprite" type="Sprite" parent="Control"]
+light_mask = 2
 position = Vector2( 64, 64 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 5
+
+[node name="Light2D" type="Light2D" parent="Control/Sprite"]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+energy = 1.27
+mode = 3
+range_item_cull_mask = 2
+
+[node name="darkness" parent="Control" instance=ExtResource( 6 )]
+visible = true
+light_mask = 1
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -58,3 +88,5 @@ custom_colors/font_outline_modulate = Color( 0.341176, 0, 0, 1 )
 text = "YOU DIED"
 align = 1
 valign = 1
+[connection signal="finished" from="Control/thunder" to="." method="_on_thunder_finished"]
+[connection signal="timeout" from="Control/Timer" to="." method="_on_Timer_timeout"]

@@ -36,4 +36,4 @@ func _physics_process(delta):
 			collision.collider.get_parent().position += velocity*8
 		move_and_collide(-velocity*8)
 		$AudioStreamPlayer.play()
-		emit_signal("damaged")
+		emit_signal("damaged", self)

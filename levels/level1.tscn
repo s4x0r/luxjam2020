@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://level parts/wallset.tres" type="TileSet" id=1]
 [ext_resource path="res://level parts/floorset.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://furniture/bed.tscn" type="PackedScene" id=4]
 [ext_resource path="res://level parts/level controller.tscn" type="PackedScene" id=5]
 [ext_resource path="res://level parts/KinematicChar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://level parts/Light2D.tscn" type="PackedScene" id=8]
 
 [node name="level1" type="Node2D"]
 
@@ -35,6 +36,26 @@ position = Vector2( 551.478, 167.991 )
 
 [node name="KinematicChar" parent="." instance=ExtResource( 7 )]
 position = Vector2( 592, 160 )
+
+[node name="Light2D" parent="." groups=[
+"lights",
+] instance=ExtResource( 8 )]
+position = Vector2( 352, 32 )
+
+[node name="Light2D3" parent="." groups=[
+"lights",
+] instance=ExtResource( 8 )]
+position = Vector2( 704, -64 )
+
+[node name="Light2D2" parent="." groups=[
+"lights",
+] instance=ExtResource( 8 )]
+position = Vector2( 928, 208 )
+
+[node name="Light2D4" parent="." groups=[
+"lights",
+] instance=ExtResource( 8 )]
+position = Vector2( 1104, 608 )
 
 [node name="level controller" parent="." instance=ExtResource( 5 )]
 [connection signal="damaged" from="KinematicChar" to="level controller" method="_on_KinematicChar_damaged"]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://s4xstuff/LPC Submissions Merged 2.0/Interior.png" type="Texture" id=1]
 
 [sub_resource type="OccluderPolygon2D" id=1]
-polygon = PoolVector2Array( -64, 48, -56.9837, 46.7155, -65.6629, 14.2631, -50.9461, -34.0382, -50.9461, -44.6041, -11.7013, -44.9814, -11.7013, -34.7929, -3.77687, -0.45369, 1.50609, 13.131, -4.15422, 43.6967, -7.17305, 46.3382, 10.5626, 46.7155, 6.03432, 36.527, 3.77022, 16.1499, 3.77022, 11.6216, 5.27962, 7.47073, 5.65697, 3.31985, 4.14757, -18.944, 3.77022, -46.1135, -69.4364, -45.3588, -66.7949, -19.6987, -68.3043, 10.1122, -67.5496, 14.2631, -69.059, 30.4893, -73.9646, 47.4702 )
+polygon = PoolVector2Array( -67.416, -46.2513, -51.3916, -46.7641, -52.2237, -31.2302, -58.8811, -0.440018, -64.9837, 12.3199, -58.3263, 42.2779, -55.8298, 45.884, -75.0581, 47.2983, -70.8066, 29.7989, -67.1525, 11.9866, -69.2607, 9.35143, -68.7336, 3.81751, -67.416, -19.1087 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -13.3066, -46.1898, 3.74001, -46.3835, 4.51486, -19.2639, 5.28971, 9.59909, 3.74001, 12.6985, 6.06457, 31.4885, 10.7136, 47.5665, -8.27007, 47.3728, -6.52667, 44.4671, 1.60921, 13.8607, -3.03987, 3.98147, -10.4009, -23.5255, -12.1443, -33.0174 )
 
 [node name="curtains" type="Node2D"]
 
@@ -26,4 +29,8 @@ region_enabled = true
 region_rect = Rect2( 448, 672, 32, 96 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite3"]
+position = Vector2( 0, 0.358482 )
 occluder = SubResource( 1 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Sprite3"]
+occluder = SubResource( 2 )
