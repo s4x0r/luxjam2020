@@ -44,3 +44,12 @@ func _on_thunder_finished():
 	$Control/Timer.start(rand_range(10, 15))
 	get_tree().call_group('lights','hide')
 	pass # Replace with function body.
+
+
+func _on_mainmenubutton_pressed():
+	get_tree().change_scene("res://levels/title screen.tscn")
+
+
+func _on_retrybutton_pressed():
+	get_tree().reload_current_scene()
+	pass # Replace with function body.
