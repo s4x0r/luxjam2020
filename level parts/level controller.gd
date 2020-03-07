@@ -7,13 +7,17 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	show()
+	$Control/darkness.show()
+	$gameover.hide()
+	$"level complete".hide()
 	$Control/Timer.start(rand_range(5, 10))
 	pass # Replace with function body.
 
 func game_over():
 	$Control/darkness.hide()
 	get_tree().call_group('lights','hide')
-	get_tree().call_group('sounds', 'stop')
+	#get_tree().call_group('sounds', 'stop')
 	$gameover.visible = true
 	pass
 
@@ -57,6 +61,7 @@ func _on_retrybutton_pressed():
 
 func _on_phone_collected():
 	global.level_complete(get_parent().name)
+	$Control/Timer.stop()
 	$"level complete".show()
 	pass # Replace with function body.
 
