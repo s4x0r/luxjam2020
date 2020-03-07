@@ -4,7 +4,7 @@ signal damaged
 
 const GRAVITY = 200.0
 const WALK_SPEED = 3.5
-const FRICTION = 1.05	#Friction mechanism may be improved, see line 38
+const FRICTION = 0.95	#Friction mechanism may be improved, see line 38
 var collision
 var velocity = Vector2()
 
@@ -34,8 +34,8 @@ func _physics_process(delta):
 		velocity.x -= WALK_SPEED / velocity.x
 	if abs(velocity.y)>WALK_SPEED:
 		velocity.y -= WALK_SPEED / velocity.y
-		
-	velocity = velocity/FRICTION	#Player slides, how cool.
+	
+	velocity *= FRICTION 	#Player slides, how cool.
 	
 	collision = move_and_collide(velocity)
 	if collision != null:

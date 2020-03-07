@@ -4,91 +4,100 @@
 [ext_resource path="res://s4xstuff/openpixels-master/layers/body_olive.png" type="Texture" id=2]
 [ext_resource path="res://s4xstuff/Jab-SoundBible.com-1806727891.wav" type="AudioStream" id=3]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 35, 156, 35, 52 )
 
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 156, 35, 52 )
+region = Rect2( 35, 114, 35, 38 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 70, 156, 35, 52 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 35, 52, 35, 52 )
+region = Rect2( 0, 114, 35, 38 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 52, 35, 52 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 70, 52, 35, 52 )
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 35, 0, 35, 52 )
+region = Rect2( 70, 114, 35, 38 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 35, 52 )
+region = Rect2( 35, 38, 35, 38 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 70, 0, 35, 52 )
+region = Rect2( 0, 38, 35, 38 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 35, 104, 35, 52 )
+region = Rect2( 70, 38, 35, 38 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 104, 35, 52 )
 
-[sub_resource type="AtlasTexture" id=12]
+region = Rect2( 35, 0, 35, 38 )
+
+
+[sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 70, 104, 35, 52 )
+
+region = Rect2( 0, 0, 35, 38 )
+
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 70, 0, 35, 38 )
+
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 35, 76, 35, 38 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 76, 35, 38 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 70, 76, 35, 38 )
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 1 ), SubResource( 3 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 15 ), SubResource( 17 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 4 ), SubResource( 6 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 18 ), SubResource( 20 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 7 ), SubResource( 9 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 21 ), SubResource( 23 ) ],
 "loop": true,
 "name": "up",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 10 ), SubResource( 12 ) ],
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 24 ), SubResource( 26 ) ],
 "loop": true,
 "name": "down",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 13.2098, 17.3297 )
+extents = Vector2( 10.2953, 11.9493 )
 
 [node name="KinematicChar" type="KinematicBody2D"]
 position = Vector2( 644.347, 336.517 )
@@ -102,6 +111,7 @@ frames = SubResource( 13 )
 animation = "down"
 
 [node name="CharacterCollider" type="CollisionShape2D" parent="."]
+position = Vector2( 1.497, 5.112 )
 shape = SubResource( 14 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
