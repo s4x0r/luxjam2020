@@ -31,7 +31,7 @@ func _physics_process(delta):
 	
 	collision = move_and_collide(velocity)
 	if collision != null:
-		if collision.collider.get_parent().moveable == true:
+		if not collision.collider.get_parent().get("moveable")==null:
 			collision.collider.get_parent().position += velocity*8
 		move_and_collide(-velocity*8)
 		$AudioStreamPlayer.play()

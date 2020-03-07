@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/phonelight.png-4e8f4e6cbb338efc3ca3e279354391c6.stex"
+path="res://.import/phonelight.png-795833fcf969bdbc9f3b2a76d399e26c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://s4xstuff/phonelight.png"
-dest_files=[ "res://.import/phonelight.png-4e8f4e6cbb338efc3ca3e279354391c6.stex" ]
+source_file="res://level parts/phonelight.png"
+dest_files=[ "res://.import/phonelight.png-795833fcf969bdbc9f3b2a76d399e26c.stex" ]
 
 [params]
 

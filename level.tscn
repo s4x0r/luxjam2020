@@ -1,11 +1,12 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
-[ext_resource path="res://s4xstuff/floorset.tres" type="TileSet" id=1]
+[ext_resource path="res://level parts/floorset.tres" type="TileSet" id=1]
 [ext_resource path="res://s4xstuff/openpixels-master/layers/body_olive.png" type="Texture" id=2]
 [ext_resource path="res://char.gd" type="Script" id=3]
 [ext_resource path="res://furniture/table.tscn" type="PackedScene" id=4]
-[ext_resource path="res://s4xstuff/KinematicChar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://s4xstuff/light.png" type="Texture" id=7]
+[ext_resource path="res://level parts/KinematicChar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level parts/darkness.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level parts/light.png" type="Texture" id=7]
 [ext_resource path="res://s4xstuff/Thunder_HD-Mark_DiAngelo-587966950.wav" type="AudioStream" id=8]
 [ext_resource path="res://level.gd" type="Script" id=9]
 [ext_resource path="res://s4xstuff/Rain_Inside_House-Mark_DiAngelo-323934112.wav" type="AudioStream" id=10]
@@ -18,7 +19,7 @@
 [ext_resource path="res://furniture/chair right.tscn" type="PackedScene" id=17]
 [ext_resource path="res://furniture/table 3.tscn" type="PackedScene" id=18]
 [ext_resource path="res://furniture/chair up.tscn" type="PackedScene" id=19]
-[ext_resource path="res://s4xstuff/phone.tscn" type="PackedScene" id=20]
+[ext_resource path="res://level parts/phone.tscn" type="PackedScene" id=20]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -194,9 +195,7 @@ shape = SubResource( 14 )
 
 [node name="KinematicChar" parent="." instance=ExtResource( 5 )]
 
-[node name="darkness" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0.027451, 0.027451, 0.027451, 1 )
+[node name="darkness" parent="." instance=ExtResource( 6 )]
 
 [node name="Light2D" type="Light2D" parent="."]
 visible = false

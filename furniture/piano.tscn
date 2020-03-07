@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://s4xstuff/LPC Submissions Merged 2.0/Interior.png" type="Texture" id=1]
 [ext_resource path="res://furniture/moveable.gd" type="Script" id=2]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -26.2113, 18.7005, -25.7594, 1.52936, 24.1724, -17.4492, 23.7205, -24.4533, -9.9439, -27.8423, -18.0776, -35.0722, -22.3704, -34.6204, -31.4078, -23.0976, -31.8597, 18.7005 )
 
 [node name="piano" type="Node2D"]
 script = ExtResource( 2 )
@@ -15,3 +18,6 @@ region_rect = Rect2( 560, 480, 64, 96 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 25.732, 37.1514, 32.241, 20.6287, 32.241, -8.66154, 25.4817, -23.6822, -4.80998, -28.4387, -18.5789, -36.4498, -24.5872, -34.1967, -32.3478, -23.6822, -32.3478, 19.377, -26.3396, 37.9025 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )
