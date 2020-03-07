@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Rain_Inside_House-Mark_DiAngelo-323934112.wav-d6d006239bdb36111280a5e33b2a0206.sample"
+
+[deps]
+
+source_file="res://s4xstuff/Rain_Inside_House-Mark_DiAngelo-323934112.wav"
+dest_files=[ "res://.import/Rain_Inside_House-Mark_DiAngelo-323934112.wav-d6d006239bdb36111280a5e33b2a0206.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

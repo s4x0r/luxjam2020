@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Phone_Vibrating-Sound_Explorer-738835678.wav-ec30b1e36c894e7f732659a0c959b64b.sample"
+
+[deps]
+
+source_file="res://s4xstuff/Phone_Vibrating-Sound_Explorer-738835678.wav"
+dest_files=[ "res://.import/Phone_Vibrating-Sound_Explorer-738835678.wav-ec30b1e36c894e7f732659a0c959b64b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

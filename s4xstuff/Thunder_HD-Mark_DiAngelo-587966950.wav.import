@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Thunder_HD-Mark_DiAngelo-587966950.wav-30ba83f85cc076f6095d81fcf0e571f6.sample"
+
+[deps]
+
+source_file="res://s4xstuff/Thunder_HD-Mark_DiAngelo-587966950.wav"
+dest_files=[ "res://.import/Thunder_HD-Mark_DiAngelo-587966950.wav-30ba83f85cc076f6095d81fcf0e571f6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
