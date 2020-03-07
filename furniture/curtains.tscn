@@ -3,9 +3,13 @@
 [ext_resource path="res://s4xstuff/LPC Submissions Merged 2.0/Interior.png" type="Texture" id=1]
 
 [sub_resource type="OccluderPolygon2D" id=1]
+closed = false
+cull_mode = 2
 polygon = PoolVector2Array( -67.416, -46.2513, -51.3916, -46.7641, -52.2237, -31.2302, -58.8811, -0.440018, -64.9837, 12.3199, -58.3263, 42.2779, -55.8298, 45.884, -75.0581, 47.2983, -70.8066, 29.7989, -67.1525, 11.9866, -69.2607, 9.35143, -68.7336, 3.81751, -67.416, -19.1087 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
+closed = false
+cull_mode = 1
 polygon = PoolVector2Array( -13.3066, -46.1898, 3.74001, -46.3835, 4.51486, -19.2639, 5.28971, 9.59909, 3.74001, 12.6985, 6.06457, 31.4885, 10.7136, 47.5665, -8.27007, 47.3728, -6.52667, 44.4671, 1.60921, 13.8607, -3.03987, 3.98147, -10.4009, -23.5255, -12.1443, -33.0174 )
 
 [node name="curtains" type="Node2D"]

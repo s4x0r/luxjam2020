@@ -6,4 +6,7 @@
 visible = false
 position = Vector2( 422.38, 286.899 )
 texture = ExtResource( 1 )
+mode = 2
 shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 9.4
