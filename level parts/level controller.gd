@@ -14,7 +14,7 @@ func game_over():
 	$Control/darkness.hide()
 	get_tree().call_group('lights','hide')
 	get_tree().call_group('sounds', 'stop')
-	$Panel.visible = true
+	$gameover.visible = true
 	pass
 
 func flash():
@@ -52,4 +52,15 @@ func _on_mainmenubutton_pressed():
 
 func _on_retrybutton_pressed():
 	get_tree().reload_current_scene()
+	pass # Replace with function body.
+
+
+func _on_phone_collected():
+	global.level_complete(get_parent().name)
+	pass # Replace with function body.
+
+
+func _on_nextlevel_pressed():
+	print(get_parent().name)
+	get_tree().change_scene(global.get_next_level(get_parent().name))
 	pass # Replace with function body.

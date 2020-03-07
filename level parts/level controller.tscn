@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://levels/level controller.gd" type="Script" id=1]
+[ext_resource path="res://level parts/level controller.gd" type="Script" id=1]
 [ext_resource path="res://s4xstuff/dmgindicator.png" type="Texture" id=2]
 [ext_resource path="res://s4xstuff/Thunder_HD-Mark_DiAngelo-587966950.wav" type="AudioStream" id=3]
 [ext_resource path="res://s4xstuff/Rain_Inside_House-Mark_DiAngelo-323934112.wav" type="AudioStream" id=4]
 [ext_resource path="res://s4xstuff/indicator light.png" type="Texture" id=5]
 [ext_resource path="res://level parts/darkness.tscn" type="PackedScene" id=6]
+[ext_resource path="res://s4xstuff/phonelarge.png" type="Texture" id=7]
+[ext_resource path="res://s4xstuff/msgbubble.png" type="Texture" id=8]
 
 [node name="level controller" type="Control"]
 light_mask = 0
@@ -56,7 +58,8 @@ range_item_cull_mask = 2
 [node name="darkness" parent="Control" instance=ExtResource( 6 )]
 light_mask = 1
 
-[node name="Panel" type="Panel" parent="."]
+[node name="gameover" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -69,7 +72,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="gameover"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -90,7 +93,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="gameover"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -109,12 +112,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mainmenubutton" type="Button" parent="Panel/HBoxContainer"]
+[node name="mainmenubutton" type="Button" parent="gameover/HBoxContainer"]
 margin_right = 238.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/mainmenubutton"]
+[node name="Label" type="Label" parent="gameover/HBoxContainer/mainmenubutton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -130,18 +133,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VSeparator" type="VSeparator" parent="Panel/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="gameover/HBoxContainer"]
 margin_left = 254.0
 margin_right = 258.0
 margin_bottom = 48.0
 
-[node name="retrybutton" type="Button" parent="Panel/HBoxContainer"]
+[node name="retrybutton" type="Button" parent="gameover/HBoxContainer"]
 margin_left = 274.0
 margin_right = 512.0
 margin_bottom = 48.0
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="Panel/HBoxContainer/retrybutton"]
+[node name="Label2" type="Label" parent="gameover/HBoxContainer/retrybutton"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -156,7 +159,106 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="level complete" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="level complete"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -284.0
+margin_right = 297.0
+margin_bottom = 466.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="level complete/TextureRect"]
+margin_left = 80.0
+margin_top = 186.667
+margin_right = 405.0
+margin_bottom = 311.667
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="level complete/TextureRect/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 27.0
+margin_top = 27.0
+margin_right = -146.0
+margin_bottom = -52.0
+rect_scale = Vector2( 1.75, 1.75 )
+text = "Level complete!!"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="level complete"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -256.0
+margin_top = -120.0
+margin_right = 256.0
+margin_bottom = -56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mainmenu" type="Button" parent="level complete/HBoxContainer"]
+margin_right = 246.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="level complete/HBoxContainer/mainmenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "MAIN MENU"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="level complete/HBoxContainer"]
+visible = false
+margin_left = 254.0
+margin_right = 258.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nextlevel" type="Button" parent="level complete/HBoxContainer"]
+margin_left = 266.0
+margin_right = 512.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="level complete/HBoxContainer/nextlevel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "NEXT LEVEL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="finished" from="Control/thunder" to="." method="_on_thunder_finished"]
 [connection signal="timeout" from="Control/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="Panel/HBoxContainer/mainmenubutton" to="." method="_on_mainmenubutton_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/retrybutton" to="." method="_on_retrybutton_pressed"]
+[connection signal="pressed" from="gameover/HBoxContainer/mainmenubutton" to="." method="_on_mainmenubutton_pressed"]
+[connection signal="pressed" from="gameover/HBoxContainer/retrybutton" to="." method="_on_retrybutton_pressed"]
+[connection signal="pressed" from="level complete/HBoxContainer/mainmenu" to="." method="_on_mainmenubutton_pressed"]
+[connection signal="pressed" from="level complete/HBoxContainer/nextlevel" to="." method="_on_nextlevel_pressed"]
