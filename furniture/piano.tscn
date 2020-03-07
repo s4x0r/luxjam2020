@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://s4xstuff/LPC Submissions Merged 2.0/Interior.png" type="Texture" id=1]
+
+[node name="chair" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 560, 480, 64, 96 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 25.732, 37.1514, 32.241, 20.6287, 32.241, -8.66154, 25.4817, -23.6822, -4.80998, -28.4387, -18.5789, -36.4498, -24.5872, -34.1967, -32.3478, -23.6822, -32.3478, 19.377, -26.3396, 37.9025 )
