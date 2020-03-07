@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/snowwateralt.png-a5a2659ddc51569206a4a3b797f7264e.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://s4xstuff/LPC Submissions Merged 2.0/Final Attributions/Individual Assets/Nushio/snowwateralt.png"
+dest_files=[ "res://.import/snowwateralt.png-a5a2659ddc51569206a4a3b797f7264e.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
