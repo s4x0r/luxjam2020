@@ -97,7 +97,7 @@ position = Vector2( 768, 576 )
 position = Vector2( 688, 304 )
 
 [node name="chair left" parent="." instance=ExtResource( 14 )]
-position = Vector2( 768, 368 )
+position = Vector2( 288, 368 )
 
 [node name="chair down" parent="." instance=ExtResource( 10 )]
 position = Vector2( 528, 320 )
@@ -107,3 +107,4 @@ position = Vector2( 640, 80 )
 
 [node name="level controller" parent="." instance=ExtResource( 5 )]
 [connection signal="damaged" from="KinematicChar" to="level controller" method="_on_KinematicChar_damaged"]
+[connection signal="collected" from="phone" to="level controller" method="_on_phone_collected"]

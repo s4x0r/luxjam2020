@@ -2,7 +2,9 @@
 
 [ext_resource path="res://level parts/light.png" type="Texture" id=1]
 
-[node name="Light2D" type="Light2D"]
+[node name="Light2D" type="Light2D" groups=[
+"lights",
+]]
 visible = false
 position = Vector2( 422.38, 286.899 )
 texture = ExtResource( 1 )

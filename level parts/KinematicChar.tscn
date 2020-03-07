@@ -7,16 +7,20 @@
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 2 )
+
 region = Rect2( 35, 114, 35, 38 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 2 )
+
 region = Rect2( 0, 114, 35, 38 )
+
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 2 )
+
 region = Rect2( 70, 114, 35, 38 )
 
 [sub_resource type="AtlasTexture" id=18]
@@ -37,17 +41,22 @@ region = Rect2( 70, 38, 35, 38 )
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 2 )
+
 region = Rect2( 35, 0, 35, 38 )
+
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 2 )
+
 region = Rect2( 0, 0, 35, 38 )
+
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 70, 0, 35, 38 )
+
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4

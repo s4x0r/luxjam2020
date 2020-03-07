@@ -7,14 +7,18 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	show()
+	$Control/darkness.show()
+	$gameover.hide()
+	$"level complete".hide()
 	$Control/Timer.start(rand_range(5, 10))
 	pass # Replace with function body.
 
 func game_over():
 	$Control/darkness.hide()
 	get_tree().call_group('lights','hide')
-	get_tree().call_group('sounds', 'stop')
-	$Panel.visible = true
+	#get_tree().call_group('sounds', 'stop')
+	$gameover.visible = true
 	pass
 
 func flash():
@@ -43,4 +47,26 @@ func _on_Timer_timeout():
 func _on_thunder_finished():
 	$Control/Timer.start(rand_range(10, 15))
 	get_tree().call_group('lights','hide')
+	pass # Replace with function body.
+
+
+func _on_mainmenubutton_pressed():
+	get_tree().change_scene("res://levels/title screen.tscn")
+
+
+func _on_retrybutton_pressed():
+	get_tree().reload_current_scene()
+	pass # Replace with function body.
+
+
+func _on_phone_collected():
+	global.level_complete(get_parent().name)
+	$Control/Timer.stop()
+	$"level complete".show()
+	pass # Replace with function body.
+
+
+func _on_nextlevel_pressed():
+	print(get_parent().name)
+	get_tree().change_scene(global.get_next_level(get_parent().name))
 	pass # Replace with function body.
