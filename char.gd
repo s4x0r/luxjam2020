@@ -28,5 +28,5 @@ func _process(delta):
 			play('down')
 		position.y += -speed * delta * ud
 	
-	if !(lr+ud):	#If LR or UD are both zero
+	if !(lr|ud):	#If LR or UD are both zero
 		stop()
