@@ -1,9 +1,10 @@
 extends KinematicBody2D
 
+signal damaged
+
 const GRAVITY = 200.0
 const WALK_SPEED = 1
 var collision
-
 var velocity = Vector2()
 
 func _physics_process(delta):
@@ -35,3 +36,4 @@ func _physics_process(delta):
 			collision.collider.get_parent().position += velocity*8
 		move_and_collide(-velocity*8)
 		$AudioStreamPlayer.play()
+		emit_signal("damaged")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://level parts/KinematcChar.gd" type="Script" id=1]
+[ext_resource path="res://level parts/KinematicChar.gd" type="Script" id=1]
 [ext_resource path="res://s4xstuff/openpixels-master/layers/body_olive.png" type="Texture" id=2]
 [ext_resource path="res://s4xstuff/Jab-SoundBible.com-1806727891.wav" type="AudioStream" id=3]
 

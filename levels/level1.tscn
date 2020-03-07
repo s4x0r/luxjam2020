@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://level parts/wallset.tres" type="TileSet" id=1]
 [ext_resource path="res://level parts/floorset.tres" type="TileSet" id=2]
 [ext_resource path="res://furniture/curtains.tscn" type="PackedScene" id=3]
 [ext_resource path="res://furniture/bed.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level parts/level controller.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level parts/KinematicChar.tscn" type="PackedScene" id=7]
 
 [node name="level1" type="Node2D"]
 
@@ -30,3 +32,9 @@ position = Vector2( 560, 48 )
 
 [node name="bed" parent="." instance=ExtResource( 4 )]
 position = Vector2( 551.478, 167.991 )
+
+[node name="KinematicChar" parent="." instance=ExtResource( 7 )]
+position = Vector2( 592, 160 )
+
+[node name="level controller" parent="." instance=ExtResource( 5 )]
+[connection signal="damaged" from="KinematicChar" to="level controller" method="_on_KinematicChar_damaged"]
