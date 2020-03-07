@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 
-var speed = 100
+var speed = 200
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,7 +17,7 @@ func _process(delta):
 	elif Input.is_action_pressed("ui_left"):
 		play('left')
 		position.x += -speed * delta
-	elif Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up"):
 		play('up')
 		position.y += -speed * delta
 	elif Input.is_action_pressed("ui_down"):
