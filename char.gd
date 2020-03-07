@@ -22,7 +22,7 @@ func _process(delta):
 		position.x += speed * delta * lr
 		
 	if ud:	#If ud (Up/Down) is nonzero
-		if ud>1:	#up - down == 1 if down is not pressed
+		if ud==1:	#up - down == 1 if down is not pressed
 			play('up')
 		else:	#Else it would be down
 			play('down')
