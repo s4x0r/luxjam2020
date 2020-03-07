@@ -57,6 +57,7 @@ func _on_retrybutton_pressed():
 
 func _on_phone_collected():
 	global.level_complete(get_parent().name)
+	$"level complete".show()
 	pass # Replace with function body.
 
 
