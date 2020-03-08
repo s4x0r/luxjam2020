@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://s4xstuff/LPC Submissions Merged 2.0/Terrain and Outside.png" type="Texture" id=1]
+
+[node name="moai" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 672, 928, 64, 96 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 22.6051, 0.677231, 22.6051, -27.2558, 19.7064, -41.7494, -6.90904, -43.067, -11.6524, -40.4318, -21.1391, -21.4584, -27.3174, -1.60203, -27.3173, -1.60204, -26.6862, 23.6426, -20.085, 28.6103, -20.612, 39.151, 10.2197, 41.2592, 21.6822, 28.2421, 25.2403, 9.10985 )

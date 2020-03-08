@@ -54,17 +54,19 @@ func _physics_process(delta):
 	
 	collision = move_and_collide(velocity)
 	if collision != null:
+		$AudioStreamPlayer.play()
 		if not collision.collider.get_parent().get("moveable")==null:
 			if item_uses > 0:
 				item_uses-1
 				if crowbar:
 					collision.collider.get_parent().get_parent().remove_child(collision.collider.get_parent())
+				else:
+					emit_signal("damaged", self)
 				if item_uses==0:
 					crowbar = false
 					$crowbar.hide()
 			else:
 				collision.collider.get_parent().position += velocity*8
+				
 		velocity = -velocity*2	#Player bounces in opposite direction
 		#move_and_collide(velocity)
-		$AudioStreamPlayer.play()
-		emit_signal("damaged", self)

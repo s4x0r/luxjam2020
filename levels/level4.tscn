@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://level parts/wallset.tres" type="TileSet" id=1]
 [ext_resource path="res://level parts/floorset.tres" type="TileSet" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://furniture/bookshelf.tscn" type="PackedScene" id=18]
 [ext_resource path="res://furniture/curtains.tscn" type="PackedScene" id=19]
 [ext_resource path="res://furniture/chair left.tscn" type="PackedScene" id=20]
+[ext_resource path="res://furniture/barrels.tscn" type="PackedScene" id=21]
 
 [node name="level4" type="Node2D"]
 
@@ -97,9 +98,6 @@ position = Vector2( 880, 400 )
 [node name="table" parent="furniture container" instance=ExtResource( 15 )]
 position = Vector2( 288, 448 )
 
-[node name="chair right" parent="furniture container" instance=ExtResource( 16 )]
-position = Vector2( 224, 480 )
-
 [node name="chair right2" parent="furniture container" instance=ExtResource( 16 )]
 position = Vector2( 112, 368 )
 
@@ -114,6 +112,12 @@ position = Vector2( 912, 400 )
 
 [node name="chair left" parent="furniture container" instance=ExtResource( 20 )]
 position = Vector2( 608, 160 )
+
+[node name="barrels" parent="furniture container" instance=ExtResource( 21 )]
+position = Vector2( 432, 416 )
+
+[node name="barrels2" parent="furniture container" instance=ExtResource( 21 )]
+position = Vector2( 192, 480 )
 
 [node name="light container" type="Node2D" parent="."]
 position = Vector2( 112, 528 )
@@ -140,7 +144,7 @@ position = Vector2( -256, -384 )
 position = Vector2( 992, 544 )
 
 [node name="phone" parent="." instance=ExtResource( 5 )]
-position = Vector2( 112, 528 )
+position = Vector2( 96, 544 )
 
 [node name="level controller" parent="." instance=ExtResource( 4 )]
 visible = false

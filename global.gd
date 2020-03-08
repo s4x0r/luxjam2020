@@ -1,8 +1,12 @@
 extends Node
 
-const MAX_LEVEL = 4
+const MAX_LEVEL = 5
 var available_levels = 1
 
+func _input(event):
+	if Input.is_action_pressed("ui_escape"):
+		get_tree().change_scene("res://levels/title screen.tscn")
+	pass
 
 func get_next_level(level):
 	var x = int(level.lstrip('level'))

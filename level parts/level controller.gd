@@ -6,12 +6,13 @@ extends Control
 # var b = "text"
 
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
 	show()
 	$Control/darkness.show()
 	$gameover.hide()
 	$"level complete".hide()
-	$Control/Timer.start(rand_range(4, 8))
+	$Control/Timer.start(rand_range(4, 6))
 	pass # Replace with function body.
 
 func game_over():
