@@ -89,7 +89,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=14]
-radius = 14.3796
+radius = 12.6616
 
 [node name="KinematicChar" type="KinematicBody2D"]
 position = Vector2( 644.347, 336.517 )
