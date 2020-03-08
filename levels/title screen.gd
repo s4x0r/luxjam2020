@@ -48,3 +48,8 @@ func _on_Instructions_pressed():
 func _on_Close_pressed():
 	$Instructpanel.hide()
 	pass # Replace with function body.
+
+
+func _on_Credits_pressed():
+	changescene('res://levels/credits.tscn')
+	pass # Replace with function body.

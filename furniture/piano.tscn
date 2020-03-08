@@ -17,7 +17,8 @@ region_rect = Rect2( 560, 480, 64, 96 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 25.732, 37.1514, 32.241, 20.6287, 32.241, -8.66154, 25.4817, -23.6822, -4.80998, -28.4387, -18.5789, -36.4498, -24.5872, -34.1967, -32.3478, -23.6822, -32.3478, 19.377, -26.3396, 37.9025 )
+position = Vector2( 0, -0.203907 )
+polygon = PoolVector2Array( 31.409, 19.5752, 32.241, -8.66154, 11.4261, -22.0219, -16.917, -30.5861, -31.1905, -21.4102, -32.2101, 19.7791 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 1 )

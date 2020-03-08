@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://level parts/wallset.tres" type="TileSet" id=1]
 [ext_resource path="res://level parts/floorset.tres" type="TileSet" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://furniture/table.tscn" type="PackedScene" id=16]
 [ext_resource path="res://level parts/phone.tscn" type="PackedScene" id=17]
 [ext_resource path="res://furniture/bookshelf.tscn" type="PackedScene" id=18]
+[ext_resource path="res://powerups/crowbar.tscn" type="PackedScene" id=19]
+[ext_resource path="res://powerups/meds.tscn" type="PackedScene" id=20]
 
 [node name="level1" type="Node2D"]
 
@@ -33,78 +35,79 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 15, 1, 0, 16, 6, 0, 17, 8, 0, 19, 6, 0, 20, 6, 0, 21, 8, 0, 23, 6, 0, 24, 3, 0, 65551, 1, 0, 65560, 3, 0, 131087, 1, 0, 131096, 3, 0, 196615, 1, 0, 196616, 0, 0, 196617, 0, 0, 196618, 8, 0, 196621, 0, 0, 196622, 0, 0, 196623, 1, 0, 196632, 3, 0, 262151, 1, 0, 262158, 1, 0, 262159, 1, 0, 262168, 3, 0, 327687, 1, 0, 327694, 1, 0, 327695, 1, 0, 327704, 3, 0, 393223, 1, 0, 393230, 1, 0, 393231, 1, 0, 393240, 3, 0, 458759, 1, 0, 458766, 1, 0, 458767, 5, 0, 458768, 5, 0, 458769, 5, 0, 458770, 5, 0, 458773, 5, 0, 458774, 5, 0, 458775, 5, 0, 458776, 5, 0, 458777, 5, 0, 458778, 3, 0, 524295, 1, 0, 524302, 1, 0, 524314, 3, 0, 589831, 1, 0, 589838, 1, 0, 589850, 7, 0, 589851, 7, 0, 589852, 8, 0, 589854, 7, 0, 589855, 7, 0, 589856, 3, 0, 655367, 1, 0, 655392, 3, 0, 720903, 1, 0, 720928, 3, 0, 786439, 1, 0, 786448, 1, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786464, 3, 0, 851975, 1, 0, 851984, 1, 0, 852000, 3, 0, 917511, 1, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917536, 3, 0, 983047, 1, 0, 983054, 1, 0, 983072, 3, 0, 1048583, 1, 0, 1048590, 1, 0, 1048608, 3, 0, 1114126, 1, 0, 1114144, 3, 0, 1179662, 1, 0, 1179674, 5, 0, 1179675, 5, 0, 1179676, 5, 0, 1179677, 5, 0, 1179678, 5, 0, 1179679, 5, 0, 1245198, 5, 0, 1245199, 5, 0, 1245200, 5, 0, 1245201, 5, 0, 1245202, 5, 0, 1245203, 5, 0, 1245204, 5, 0, 1245205, 5, 0, 1245206, 5, 0, 1245207, 5, 0, 1245208, 5, 0, 1245209, 5, 0 )
 
-[node name="curtains" parent="." instance=ExtResource( 3 )]
+[node name="stuff container" type="Node2D" parent="."]
+
+[node name="curtains" parent="stuff container" instance=ExtResource( 3 )]
 position = Vector2( 910.77, 335.153 )
 
-[node name="curtains2" parent="." instance=ExtResource( 3 )]
+[node name="curtains2" parent="stuff container" instance=ExtResource( 3 )]
 position = Vector2( 688, 48 )
 
-[node name="curtains3" parent="." instance=ExtResource( 3 )]
+[node name="curtains3" parent="stuff container" instance=ExtResource( 3 )]
 position = Vector2( 560, 48 )
 
-[node name="bed" parent="." instance=ExtResource( 4 )]
+[node name="bed" parent="stuff container" instance=ExtResource( 4 )]
 position = Vector2( 551.478, 167.991 )
+
+[node name="bookshelf2" parent="stuff container" instance=ExtResource( 12 )]
+position = Vector2( 752, 464 )
+
+[node name="piano" parent="stuff container" instance=ExtResource( 11 )]
+position = Vector2( 640, 496 )
+
+[node name="table 2" parent="stuff container" instance=ExtResource( 13 )]
+position = Vector2( 928, 480 )
+
+[node name="chair up" parent="stuff container" instance=ExtResource( 15 )]
+position = Vector2( 928, 528 )
+
+[node name="chair right" parent="stuff container" instance=ExtResource( 6 )]
+position = Vector2( 832, 480 )
+
+[node name="table 3" parent="stuff container" instance=ExtResource( 9 )]
+position = Vector2( 448, 288 )
+
+[node name="table" parent="stuff container" instance=ExtResource( 16 )]
+position = Vector2( 768, 576 )
+
+[node name="bookshelf" parent="stuff container" instance=ExtResource( 18 )]
+position = Vector2( 688, 304 )
+
+[node name="chair left" parent="stuff container" instance=ExtResource( 14 )]
+position = Vector2( 288, 368 )
+
+[node name="chair down" parent="stuff container" instance=ExtResource( 10 )]
+position = Vector2( 528, 320 )
+
+[node name="bookshelf3" parent="stuff container" instance=ExtResource( 12 )]
+position = Vector2( 640, 80 )
 
 [node name="KinematicChar" parent="." instance=ExtResource( 7 )]
 position = Vector2( 592, 160 )
 
-[node name="bookshelf2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 752, 464 )
-
-[node name="piano" parent="." instance=ExtResource( 11 )]
-position = Vector2( 640, 496 )
-
 [node name="phone" parent="." instance=ExtResource( 17 )]
 position = Vector2( 576, 512 )
 
-[node name="Light2D" parent="." groups=[
-"lights",
-] instance=ExtResource( 8 )]
+[node name="Light2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 352, 32 )
 
-[node name="Light2D3" parent="." groups=[
-"lights",
-] instance=ExtResource( 8 )]
+[node name="Light2D3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 704, -64 )
 
-[node name="Light2D2" parent="." groups=[
-"lights",
-] instance=ExtResource( 8 )]
+[node name="Light2D2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 928, 208 )
 
-[node name="Light2D4" parent="." groups=[
-"lights",
-] instance=ExtResource( 8 )]
+[node name="Light2D4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1104, 608 )
 shadow_filter_smooth = 0.0
 
-[node name="table 2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 928, 480 )
-
-[node name="chair up" parent="." instance=ExtResource( 15 )]
-position = Vector2( 928, 528 )
-
-[node name="chair right" parent="." instance=ExtResource( 6 )]
-position = Vector2( 832, 480 )
-
-[node name="table 3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 448, 288 )
-
-[node name="table" parent="." instance=ExtResource( 16 )]
-position = Vector2( 768, 576 )
-
-[node name="bookshelf" parent="." instance=ExtResource( 18 )]
-position = Vector2( 688, 304 )
-
-[node name="chair left" parent="." instance=ExtResource( 14 )]
-position = Vector2( 288, 368 )
-
-[node name="chair down" parent="." instance=ExtResource( 10 )]
-position = Vector2( 528, 320 )
-
-[node name="bookshelf3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 640, 80 )
+[node name="crowbar" parent="." instance=ExtResource( 19 )]
+position = Vector2( 352, 288 )
 
 [node name="level controller" parent="." instance=ExtResource( 5 )]
+
+[node name="meds" parent="." instance=ExtResource( 20 )]
+position = Vector2( 992, 416 )
 [connection signal="damaged" from="KinematicChar" to="level controller" method="_on_KinematicChar_damaged"]
+[connection signal="pickup" from="KinematicChar" to="level controller" method="_on_KinematicChar_pickup"]
 [connection signal="collected" from="phone" to="level controller" method="_on_phone_collected"]

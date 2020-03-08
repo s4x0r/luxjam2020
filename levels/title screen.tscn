@@ -106,6 +106,7 @@ rect_pivot_offset = Vector2( -336, -304 )
 text = "Credits"
 
 [node name="Instructpanel" type="Panel" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -144,4 +145,5 @@ text = "Close"
 [connection signal="pressed" from="Control/Panel/VBoxContainer/start game" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/Panel/VBoxContainer/Level Select" to="." method="_on_Level_Select_pressed"]
 [connection signal="pressed" from="Control/Panel/VBoxContainer/Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="Instructpanel/Close" to="." method="_on_Close_pressed"]
