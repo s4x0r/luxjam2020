@@ -33,3 +33,18 @@ func _ready():
 func _on_Button_pressed():
 	changescene('res://levels/level1.tscn')
 	pass # Replace with function body.
+
+
+func _on_Level_Select_pressed():
+	$Control/Panel/ScrollContainer.visible = !$Control/Panel/ScrollContainer.visible
+	pass # Replace with function body.
+
+
+func _on_Instructions_pressed():
+	$Instructpanel.show()
+	pass # Replace with function body.
+
+
+func _on_Close_pressed():
+	$Instructpanel.hide()
+	pass # Replace with function body.

@@ -54,6 +54,7 @@ __meta__ = {
 }
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -77,45 +78,70 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Control/Panel/VBoxContainer"]
+[node name="start game" type="Button" parent="Control/Panel/VBoxContainer"]
 margin_right = 96.0
 margin_bottom = 20.0
 rect_pivot_offset = Vector2( -336, -304 )
+text = "Start Game"
 
-[node name="Label" type="Label" parent="Control/Panel/VBoxContainer/Button"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Level 1"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="link" type="Label" parent="Control/Panel/VBoxContainer/Button"]
-visible = false
-margin_right = 40.0
-margin_bottom = 14.0
-text = "res://levels/level1.tscn"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button2" type="Button" parent="Control/Panel/VBoxContainer"]
+[node name="Level Select" type="Button" parent="Control/Panel/VBoxContainer"]
 margin_top = 24.0
 margin_right = 96.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( -336, -304 )
+text = "Level Select"
 
-[node name="Button3" type="Button" parent="Control/Panel/VBoxContainer"]
+[node name="Instructions" type="Button" parent="Control/Panel/VBoxContainer"]
 margin_top = 48.0
 margin_right = 96.0
 margin_bottom = 68.0
 rect_pivot_offset = Vector2( -336, -304 )
+text = "Instructions"
 
-[node name="Button4" type="Button" parent="Control/Panel/VBoxContainer"]
+[node name="Credits" type="Button" parent="Control/Panel/VBoxContainer"]
 margin_top = 72.0
 margin_right = 96.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( -336, -304 )
-[connection signal="pressed" from="Control/Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+text = "Credits"
+
+[node name="Instructpanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.0
+margin_top = -252.0
+margin_right = 256.0
+margin_bottom = 36.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Instructpanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 48.0
+margin_right = -64.0
+margin_bottom = -80.0
+text = "You wake up in the middle of the night to the sound of your phone ringing. It's raining and the power's out. Can you find your phone in the dark without killing yourself?
+
+Move with wasd/arrow keys"
+align = 1
+autowrap = true
+
+[node name="Close" type="Button" parent="Instructpanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -48.0
+margin_top = -96.0
+margin_right = 48.0
+margin_bottom = -64.0
+text = "Close"
+[connection signal="pressed" from="Control/Panel/VBoxContainer/start game" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Level Select" to="." method="_on_Level_Select_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="pressed" from="Instructpanel/Close" to="." method="_on_Close_pressed"]

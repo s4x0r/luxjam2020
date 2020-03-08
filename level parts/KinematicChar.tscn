@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://level parts/KinematicChar.gd" type="Script" id=1]
 [ext_resource path="res://s4xstuff/openpixels-master/layers/body_olive.png" type="Texture" id=2]
 [ext_resource path="res://s4xstuff/Jab-SoundBible.com-1806727891.wav" type="AudioStream" id=3]
+[ext_resource path="res://s4xstuff/crowbar.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -88,21 +89,25 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 13.2098, 17.3297 )
+extents = Vector2( 9.26227, 15.3874 )
 
 [node name="KinematicChar" type="KinematicBody2D"]
 position = Vector2( 644.347, 336.517 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 13 )
 animation = "down"
 
 [node name="CharacterCollider" type="CollisionShape2D" parent="."]
+position = Vector2( 1.93713, 0.387421 )
 shape = SubResource( 14 )
+
+[node name="crowbar" type="Sprite" parent="."]
+visible = false
+position = Vector2( 2.61615, 4.9118 )
+scale = Vector2( 0.425242, 0.539896 )
+texture = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

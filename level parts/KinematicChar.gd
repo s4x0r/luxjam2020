@@ -1,12 +1,27 @@
 extends KinematicBody2D
 
 signal damaged
+signal pickup
+var item_uses = 0
+var crowbar = false
 
 const GRAVITY = 200.0
 const WALK_SPEED = 3.5
 const FRICTION = 1.05	#Friction mechanism may be improved, see line 38
 var collision
 var velocity = Vector2()
+
+func pickup(item):
+	emit_signal("pickup", item)
+	item_uses=5
+	
+	if item == "crowbar":
+		crowbar = true
+		$crowbar.show()
+		pass
+	elif item == "flashlight":
+		pass
+	pass
 
 func _physics_process(delta):
 	collision = null
@@ -40,7 +55,15 @@ func _physics_process(delta):
 	collision = move_and_collide(velocity)
 	if collision != null:
 		if not collision.collider.get_parent().get("moveable")==null:
-			collision.collider.get_parent().position += velocity*8
+			if item_uses > 0:
+				item_uses-1
+				if crowbar:
+					collision.collider.get_parent().get_parent().remove_child(collision.collider.get_parent())
+				if item_uses==0:
+					crowbar = false
+					$crowbar.hide()
+			else:
+				collision.collider.get_parent().position += velocity*8
 		velocity = -velocity*2	#Player bounces in opposite direction
 		#move_and_collide(velocity)
 		$AudioStreamPlayer.play()

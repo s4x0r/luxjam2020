@@ -11,7 +11,7 @@ func _ready():
 	$Control/darkness.show()
 	$gameover.hide()
 	$"level complete".hide()
-	$Control/Timer.start(rand_range(5, 10))
+	$Control/Timer.start(rand_range(4, 8))
 	pass # Replace with function body.
 
 func game_over():
@@ -62,6 +62,7 @@ func _on_retrybutton_pressed():
 func _on_phone_collected():
 	global.level_complete(get_parent().name)
 	$Control/Timer.stop()
+	$Control/darkness.hide()
 	$"level complete".show()
 	pass # Replace with function body.
 
@@ -69,4 +70,11 @@ func _on_phone_collected():
 func _on_nextlevel_pressed():
 	print(get_parent().name)
 	get_tree().change_scene(global.get_next_level(get_parent().name))
+	pass # Replace with function body.
+
+
+func _on_KinematicChar_pickup(item):
+	if item == "meds":
+		 $Control/Sprite.frame -=5
+	
 	pass # Replace with function body.
